@@ -1,6 +1,6 @@
 import 'package:covid_tracker_2/countBox.dart';
 import 'package:covid_tracker_2/services/api_calls.dart';
-import 'package:covid_tracker_2/services/jsonSerialization.dart';
+import 'package:covid_tracker_2/services/jsonParse.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -28,6 +28,8 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     _covidInfo = APICalls().getAPI();
+
+    APICalls().getIndiainfo();
     super.initState();
   }
 
@@ -156,6 +158,9 @@ class _HomePageState extends State<HomePage> {
                                 style: TextStyle(
                                     fontSize: 15, color: Colors.grey[500]),
                               ),
+                            ),
+                            SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.02,
                             )
                           ],
                         ),
