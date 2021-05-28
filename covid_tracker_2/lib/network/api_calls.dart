@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:covid_tracker_2/services/jsonParse.dart';
+import 'package:covid_tracker_2/models/apiModel.dart';
 import 'package:http/http.dart' as http;
 
 class APICalls {
