@@ -14,6 +14,7 @@ class _IndiaState extends State<India> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Colors.white,
       child: FutureBuilder<List<Statewise>>(
         future: APICalls().getIndiainfo(),
         builder: (context, snapshot) {
@@ -31,16 +32,11 @@ class _IndiaState extends State<India> {
                         margin: EdgeInsets.symmetric(
                             vertical: MediaQuery.of(context).size.height * 0.05,
                             horizontal:
-                                MediaQuery.of(context).size.width * 0.026),
+                                MediaQuery.of(context).size.width * 0.3),
                         height: MediaQuery.of(context).size.height * 0.08,
                         width: MediaQuery.of(context).size.width,
                         decoration: BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey,
-                              blurRadius: 8.0,
-                            ),
-                          ],
+                          border: Border.all(color: Colors.grey[300], width: 1),
                           color: Colors.grey[400],
                           borderRadius: BorderRadius.circular(15),
                         ),
@@ -55,10 +51,14 @@ class _IndiaState extends State<India> {
                               borderRadius: BorderRadius.circular(15),
                             ),
                             child: Center(
-                              child: Text(
-                                '${snapshot.data[index].state}',
-                                style: TextStyle(
-                                    fontSize: 18, color: Colors.grey[800]),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  '${snapshot.data[index].state}',
+                                  style: TextStyle(
+                                      fontSize: 18, color: Colors.grey[800]),
+                                  textAlign: TextAlign.center,
+                                ),
                               ),
                             ),
                           ),
