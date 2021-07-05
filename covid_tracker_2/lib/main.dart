@@ -1,4 +1,5 @@
 import 'package:covid_tracker_2/screens/home.dart';
+import 'package:covid_tracker_2/screens/wrapper.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,10 +11,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomePage(),
+      home: Wrapper(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
-
-
